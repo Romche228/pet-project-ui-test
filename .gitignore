@@ -1,0 +1,7 @@
+.git
+.allure
+.idea
+allure-results
+allure-report
+build
+target

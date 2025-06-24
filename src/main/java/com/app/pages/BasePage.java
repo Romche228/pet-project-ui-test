@@ -22,7 +22,7 @@ import static com.codeborne.selenide.Selenide.$x;
 public abstract class BasePage
 {
     protected Properties prop;
-    protected String pageUrl = "https://www.saucedemo.com/";
+    protected String pageUrl = "https://www.saucedemo.com";
 
     public BasePage(String path)
     {
@@ -37,11 +37,7 @@ public abstract class BasePage
         }
     }
 
-    public void open()
-    {
-        String url = Trim.leftTrim(pageUrl, "/");
-        Selenide.open(url);
-    }
+    public void open() { Selenide.open(pageUrl); }
 
     public void open(String url)
     {

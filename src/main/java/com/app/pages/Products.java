@@ -9,12 +9,9 @@ import java.nio.file.Paths;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
-public class ProductsPage extends BasePage {
-    String jsonString = new String(Files.readAllBytes(Paths.get("./config.json")));
-    JSONObject json = new JSONObject(jsonString);
-    String contourCode = (String) json.getString("contour_code");
+public class Products extends BasePage {
 
-    public ProductsPage(String path) throws IOException { super(path); }
+    public Products(String path) throws IOException { super(path); }
 
     public void login(String username, String password)
     {

@@ -17,7 +17,6 @@ import java.nio.file.Paths;
 import java.util.UUID;
 
 import com.app.App;
-import com.launch.HttpURLConnectionExample;
 
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;
