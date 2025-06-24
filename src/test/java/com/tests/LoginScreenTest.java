@@ -1,17 +1,15 @@
 package com.tests;
 
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
 
-public class LoginScreenTest extends BaseTest {
+public class LoginTest extends BaseTest {
 
     @BeforeMethod(description = "Открыть страницу")
     public void projectCreation() throws IOException {
-        app.loginScreen.open();
+        app.loginPage.open();
     }
 
     @Test (description = "Отображение ошибки при аутентификации без пароля")
@@ -19,8 +17,8 @@ public class LoginScreenTest extends BaseTest {
         String expectedErrorMessage = "Epic sadface: Password is required",
                 username = "secret_sauce";
 
-        app.loginScreen.login(username, "");
-        String actualErrorMessage = app.loginScreen.getErrorMessage();
+        app.loginPage.login(username, "");
+        String actualErrorMessage = app.loginPage.getErrorMessage();
         checkEqualsStep(actualErrorMessage, expectedErrorMessage);
     }
 
@@ -29,8 +27,8 @@ public class LoginScreenTest extends BaseTest {
         String expectedErrorMessage = "Epic sadface: Username is required",
                 password = "secret_sauce";
 
-        app.loginScreen.login("", password);
-        String actualErrorMessage = app.loginScreen.getErrorMessage();
+        app.loginPage.login("", password);
+        String actualErrorMessage = app.loginPage.getErrorMessage();
         checkEqualsStep(actualErrorMessage, expectedErrorMessage);
     }
 
@@ -40,8 +38,8 @@ public class LoginScreenTest extends BaseTest {
                 username = "standart_user",
                 password = "wrong_password";
 
-        app.loginScreen.login(username, password);
-        String actualErrorMessage = app.loginScreen.getErrorMessage();
+        app.loginPage.login(username, password);
+        String actualErrorMessage = app.loginPage.getErrorMessage();
         checkEqualsStep(actualErrorMessage, expectedErrorMessage);
     }
 }
