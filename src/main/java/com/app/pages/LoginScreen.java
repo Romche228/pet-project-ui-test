@@ -1,17 +1,11 @@
 package com.app.pages;
 
-import org.json.JSONObject;
-
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class LoginScreen extends BasePage {
 
-    public LoginScreen(String path) throws IOException { super(path); }
+    public LoginScreen(String path) { super(path); }
 
     public void login(String username, String password)
     {
