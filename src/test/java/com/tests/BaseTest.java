@@ -34,7 +34,7 @@ public abstract class BaseTest
     protected static App app;
     protected static String username, password, contourCode;
 
-    @BeforeSuite(description = "Получение данных пользователя из Vault")
+    @BeforeSuite (description = "Получение данных пользователя из Vault")
     public static void getUserCredentials() throws IOException {
 
         TrustManager[] trustAllCerts = new TrustManager[]{
@@ -70,13 +70,13 @@ public abstract class BaseTest
         app = new App();
     }
 
-    @BeforeTest(description = "Запуск драйвера браузера")
+    @BeforeTest (description = "Запуск драйвера браузера")
     public static void setUp() throws IOException {
         initDriver();
         app.loginScreen.open();
     }
 
-    @AfterMethod(description = "Вложения")
+    @AfterMethod (description = "Вложения")
     public static void postcondition(ITestResult result)
     {
         try
@@ -90,23 +90,23 @@ public abstract class BaseTest
         }
     }
 
-    @AfterTest(description = "Завершение сессии браузера")
+    @AfterTest (description = "Завершение сессии браузера")
     public static void tearDown() throws IOException {
         clearAllCookies();
         closeBrowser();
     }
 
-    @Step("Сравнение фактического результата \"{actual}\" и ожидаемого \"{expected}\"")
+    @Step ("Сравнение фактического результата \"{actual}\" и ожидаемого \"{expected}\"")
     public static void checkEqualsStep(String actual, String expected) {
         Assert.assertEquals(actual, expected, "Фактический результат не соответствует ожидаемому.\n");
     }
 
-    @Step("Сравнение фактического результата \"{actual}\" и ожидаемого \"{expected}\"")
+    @Step ("Сравнение фактического результата \"{actual}\" и ожидаемого \"{expected}\"")
     public static void checkEqualsStep(int actual, int expected) {
         Assert.assertEquals(actual, expected, "Фактический результат не соответствует ожидаемому.\n");
     }
 
-    @Step("Сравнение фактического результата \"{actual}\" и ожидаемого \"{expected}\"")
+    @Step ("Сравнение фактического результата \"{actual}\" и ожидаемого \"{expected}\"")
     public static void checkEqualsStep(Boolean actual, Boolean expected) {
         Assert.assertEquals(actual, expected, "Фактический результат не соответствует ожидаемому.\n");
     }

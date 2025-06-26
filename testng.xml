@@ -6,7 +6,8 @@
     </listeners>
     <test name="Dirty">
         <classes>
-            <class name="com.tests.LoginScreenTest"/>
+            <class name="com.tests.LoginTest"/>
+<!--            <class name="com.tests.AddingItemsToCartTest"/>-->
         </classes>
     </test>
 </suite>

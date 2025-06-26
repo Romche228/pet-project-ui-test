@@ -12,11 +12,15 @@ public class Header extends BasePage {
     }
 
     public void openCart() {
-        $x(prop.getProperty("header.link.cart.xpath")).click();
+        $x(prop.getProperty("header.link.cart.css")).click();
     }
 
     public int getCartItemsNum() {
         String badgeText = $(prop.getProperty("header.span.counter.css")).getText();
         return Integer.valueOf(badgeText);
+    }
+
+    public String getPageTitle() {
+        return $(prop.getProperty("header.span.page_title.xpath")).getText();
     }
 }
