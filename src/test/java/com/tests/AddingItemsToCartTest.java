@@ -2,7 +2,6 @@ package com.tests;
 
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -12,7 +11,7 @@ public class AddingItemsToCartTest extends BaseTest {
     String expectedItemName, expectedItemDescription, expectedItemPrice;
 
     @BeforeClass (description = "Добавление товара в корзину")
-    public void addingItemsToCart() throws IOException {
+    public void addingItemsToCart() {
         String username = "standard_user",
                 password = "secret_sauce";
 
@@ -51,7 +50,9 @@ public class AddingItemsToCartTest extends BaseTest {
     public void removeItemsInCart() {
         int itemsNum = app.cart.getCartItemsQuantity();
 
-        while (itemsNum > 0)
+        while (itemsNum > 0) {
             app.cart.removeItemFromCart(0);
+            itemsNum = app.cart.getCartItemsQuantity();
+        }
     }
 }

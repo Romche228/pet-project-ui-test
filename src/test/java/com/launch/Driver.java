@@ -6,16 +6,17 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import static com.codeborne.selenide.Selenide.open;
+
 public abstract class Driver
 {
     public static void initDriver()
     {
+        WebDriverManager.chromedriver().clearDriverCache().setup();
         ChromeOptions options = new ChromeOptions();
         String osName = System.getProperty("os.name");
-        if (osName.startsWith("Windows")) {
-            WebDriverManager.chromedriver().clearDriverCache().setup();
-        }
-        else {
+
+        if (!osName.startsWith("Windows")) {
             options.addArguments(
                 "--headless",
                 "--disable-dev-shm-usage",

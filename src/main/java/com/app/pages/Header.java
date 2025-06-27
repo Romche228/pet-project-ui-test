@@ -12,7 +12,7 @@ public class Header extends BasePage {
     }
 
     public void openCart() {
-        $x(prop.getProperty("header.link.cart.css")).click();
+        $(prop.getProperty("header.link.cart.css")).click();
     }
 
     public int getCartItemsNum() {
@@ -21,6 +21,6 @@ public class Header extends BasePage {
     }
 
     public String getPageTitle() {
-        return $(prop.getProperty("header.span.page_title.xpath")).getText();
+        return $x(prop.getProperty("header.span.page_title.xpath")).getText();
     }
 }

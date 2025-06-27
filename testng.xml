@@ -4,10 +4,10 @@
     <listeners>
         <listener class-name="com.launch.TestListener"/>
     </listeners>
-    <test name="Dirty">
+    <test name="Short Smoke">
         <classes>
             <class name="com.tests.LoginTest"/>
-<!--            <class name="com.tests.AddingItemsToCartTest"/>-->
+            <class name="com.tests.AddingItemsToCartTest"/>
         </classes>
     </test>
 </suite>

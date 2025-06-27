@@ -17,7 +17,7 @@ public class Cart extends BasePage {
     }
 
     public void removeItemFromCart(int itemIndex) {
-        getItem(itemIndex).$x(prop.getProperty("cart.button.remove.css")).click();
+        getItem(itemIndex).$(prop.getProperty("cart.button.remove.css")).click();
     }
 
     public void openItemViaName(int itemIndex) {

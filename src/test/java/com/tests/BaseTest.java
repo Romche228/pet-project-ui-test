@@ -32,7 +32,7 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 public abstract class BaseTest
 {
     protected static App app;
-    protected static String username, password, contourCode;
+    protected static String contourCode;
 
     @BeforeSuite (description = "Получение данных пользователя из Vault")
     public static void getUserCredentials() throws IOException {
@@ -65,7 +65,7 @@ public abstract class BaseTest
 
         String jsonString = new String(Files.readAllBytes(Paths.get("./config.json")));
         JSONObject json = new JSONObject(jsonString);
-        contourCode = (String) json.getString("contour_code");
+        contourCode = json.getString("contour_code");
 
         app = new App();
     }
