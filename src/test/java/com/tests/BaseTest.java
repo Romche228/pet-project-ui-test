@@ -94,6 +94,7 @@ public abstract class BaseTest
     public static void tearDown() throws IOException {
         clearAllCookies();
         closeBrowser();
+        clearDriver();
     }
 
     @Step ("Сравнение фактического результата \"{actual}\" и ожидаемого \"{expected}\"")

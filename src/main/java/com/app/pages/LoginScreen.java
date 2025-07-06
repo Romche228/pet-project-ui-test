@@ -1,9 +1,13 @@
 package com.app.pages;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$x;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import static com.codeborne.selenide.Selenide.*;
 
 public class LoginScreen extends BasePage {
+
+    private static final Logger log = LogManager.getLogger(LoginScreen.class);
 
     public LoginScreen(String path) { super(path); }
 
