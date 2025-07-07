@@ -2,8 +2,6 @@ package com.app.pages;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
-import com.app.helpers.Trim;
-import com.codeborne.selenide.ex.ElementShould;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.JavascriptExecutor;
@@ -13,11 +11,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.Charset;
-import java.time.Duration;
 import java.util.Properties;
-
-import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selenide.$x;
 
 public abstract class BasePage
 {
