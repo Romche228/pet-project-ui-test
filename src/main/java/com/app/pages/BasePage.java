@@ -70,15 +70,4 @@ public abstract class BasePage
                 .release(elementDrop)
                 .build().perform();
     }
-
-    public void waitForLoader()
-    {
-        try {
-            if($x(prop.getProperty("backstage.div.loader.xpath")).should(visible, Duration.ofSeconds(2)).is(visible)) {
-                try {
-                    $x(prop.getProperty("backstage.div.loader.xpath")).shouldBe(disappear, Duration.ofSeconds(5));
-                } catch(com.codeborne.selenide.ex.ElementNotFound | ElementShould e) {}
-            }
-        } catch(com.codeborne.selenide.ex.ElementNotFound | ElementShould e) {}
-    }
 }
