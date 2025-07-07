@@ -48,7 +48,6 @@ public abstract class BasePage
 
     public void refresh() {
         open(getCurrentUrl());
-        waitForLoader();
     }
 
     protected void createElement(WebElement element, String innerHtml) {
