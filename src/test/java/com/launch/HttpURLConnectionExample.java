@@ -12,7 +12,7 @@ public abstract class HttpURLConnectionExample {
 
     private static final String USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36";
     private static final String contourCode = AppConfig.getConfigParameter("contour_code");
-    private static final String vaultAutotestSecretUrl = "https://secret." + contourCode + ".platform.tatar.ru/v1/secret/platform/" + contourCode + "/build/custom/jenkins_to_modules";
+    private static final String vaultAutotestSecretUrl = contourCode + "test";
 
     public static JSONObject getSecret() throws IOException {
 
