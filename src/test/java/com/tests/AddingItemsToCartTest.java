@@ -4,8 +4,6 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import java.io.IOException;
-
 public class AddingItemsToCartTest extends BaseTest {
 
     String expectedItemName, expectedItemDescription, expectedItemPrice;
